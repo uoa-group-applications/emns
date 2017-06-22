@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.flex-vertical-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .flex-grow {
   flex-grow: 1;
 }

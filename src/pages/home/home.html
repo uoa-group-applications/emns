@@ -11,14 +11,15 @@
 </ion-header>
 
 <ion-content class="page-home background-grey">
-  <img *ngIf="!emergency" src="assets/img/home_background.png" class="background-image">
-  <img *ngIf="emergency" src="assets/img/emergency_background.png" class="background-image">
-  <div *ngIf="emergency">
+  <img *ngIf="!emergencyService.emergency" src="assets/img/home_background.png" class="background-image">
+  <img *ngIf="emergencyService.emergency" src="assets/img/emergency_background.png" class="background-image">
+  <div *ngIf="emergencyService.emergency">
     <div class="emergency-notification-title">
-      {{emergency.title}}
+      {{emergencyService.emergency.info.title}}
     </div>
     <div class="emergency-notification-message">
-      {{emergency.message}}
+      {{emergencyService.emergency.info.body}} For more information go to <a class="color-white" href="http://www.auckland.ac.nz">www.auckland.ac.nz</a>
+      <div class="medium-font margin-top-small"><a class="color-white no-link flex-vertical-center" href="http://www.auckland.ac.nz">Find out more <ion-icon class="padding-left-mini" name="arrow-forward" md="ios-arrow-forward"></ion-icon></a></div>
     </div>
   </div>
 

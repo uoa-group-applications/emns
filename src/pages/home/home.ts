@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {EmergencyMessage} from "../../model/emergency_message";
+import {EmergencyService} from "../../providers/services/emergency.service";
+import {Emergency} from "../../providers/domain/emergency";
+import {EmergencyInfo} from "../../providers/domain/emergency_info";
 
 @Component({
   selector: 'page-home',
@@ -8,21 +11,21 @@ import {EmergencyMessage} from "../../model/emergency_message";
 })
 export class HomePage {
 
-  emergency: EmergencyMessage;
-
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public emergencyService: EmergencyService) {
 
   }
 
   dummyEmergency() {
-    if(this.emergency) {
-      this.emergency = null;
+    if(this.emergencyService.emergency) {
+      this.emergencyService.setEmergency(null);
     } else {
-      this.emergency = new EmergencyMessage();
-      this.emergency.id = 1234;
-      this.emergency.level = 1;
-      this.emergency.title = "University Closure";
-      this.emergency.message = "The University is closed today (23 June 2017) from 11am due to forecast adverse weather. For more information go to www.auckland.ac.nz";
+      let emergency: Emergency = new Emergency();
+      emergency.activeEmergency = true;
+      emergency.info = new EmergencyInfo();
+      emergency.info.id = "1234";
+      emergency.info.title = "University Closure";
+      emergency.info.body = "The University is closed today (23 June 2017) from 11am due to forecast adverse weather.";
+      this.emergencyService.setEmergency(emergency);
     }
 
   }
