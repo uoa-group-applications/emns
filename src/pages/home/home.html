@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="uoa-blue-light">
-    <ion-title>
+    <ion-title (click)="dummyEmergency()">
       <div class="uoa-header flex-space-between">
         <span class="header-spaceholder"></span>
         <img class="uoa-logo flex-grow" src="assets/img/uoa_logo.png">
@@ -10,6 +10,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="background-grey">
-  <img src="assets/img/home_background.png" class="background-image">
+<ion-content class="page-home background-grey">
+  <img *ngIf="!emergency" src="assets/img/home_background.png" class="background-image">
+  <img *ngIf="emergency" src="assets/img/emergency_background.png" class="background-image">
+  <div *ngIf="emergency">
+    <div class="emergency-notification-title">
+      {{emergency.title}}
+    </div>
+    <div class="emergency-notification-message">
+      {{emergency.message}}
+    </div>
+  </div>
+
 </ion-content>

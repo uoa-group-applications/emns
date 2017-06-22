@@ -1,3 +1,25 @@
 page-home {
+  .emergency-notification-title {
+    width: 45vw;
+    background: #9c9c9c;
+    border: 1px solid #979797;
+    position: relative;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 500;
+    padding: 5vw 5vw 5vw 10vw;
+    top: 5vw;
+    left: 0;
+  }
 
+  .emergency-notification-message {
+    position: absolute;
+    right: 5vw;
+    bottom: 20vw;
+    width: 75vw;
+    color: white;
+    font-weight: 500;
+    background-color: $uoa-blue-dark;
+    padding: 5vw 7.5vw;
+  }
 }
