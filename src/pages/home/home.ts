@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {EmergencyMessage} from "../../model/emergency_message";
 import {EmergencyService} from "../../providers/services/emergency.service";
 import {Emergency} from "../../providers/domain/emergency";
 import {EmergencyInfo} from "../../providers/domain/emergency_info";
