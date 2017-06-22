@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "784263725475",
+    "firebase_url": "https://hackday-2017.firebaseio.com",
+    "project_id": "hackday-2017",
+    "storage_bucket": "hackday-2017.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784263725475:android:9c7f6cc6afed9e96",
+        "android_client_info": {
+          "package_name": "nz.ac.auckland.uoaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784263725475-6v93pg9bmg46u3lhc0vugcm09jj4oc2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrVoTfvG1CB2F-gpj7eu6AMOR9soifFYQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
