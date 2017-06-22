@@ -13,6 +13,8 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
+@import "styles";
+@import "flex";
 
 
 // Shared Variables
@@ -38,8 +40,17 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  white: #fff,
+  uoa-blue-dark: #00467f,
+  uoa-blue-light: #0080a7
 );
+
+$color-grey: #D8D8D8;
+
+.background-grey {
+  background-color: $color-grey !important;
+}
 
 
 // App iOS Variables
