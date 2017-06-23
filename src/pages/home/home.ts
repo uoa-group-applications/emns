@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component, NgZone} from '@angular/core';
+import {Events, NavController} from 'ionic-angular';
 import {EmergencyService} from "../../providers/services/emergency.service";
 import {Emergency} from "../../providers/domain/emergency";
 import {EmergencyInfo} from "../../providers/domain/emergency_info";
@@ -10,9 +10,19 @@ import {EmergencyInfo} from "../../providers/domain/emergency_info";
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public emergencyService: EmergencyService) {
+  emergency: Emergency;
 
+  constructor(public navCtrl: NavController, public emergencyService: EmergencyService, events: Events, ngZone: NgZone) {
+    this.emergency = this.emergencyService.emergency;
+    events.subscribe('data:valueChanged', () => {
+      ngZone.run(() => {
+        this.emergency = this.emergencyService.emergency;
+      });
+
+    });
   }
+
+
 
   dummyEmergency() {
     if(this.emergencyService.emergency) {
@@ -26,7 +36,7 @@ export class HomePage {
       emergency.info.body = "The University is closed today (23 June 2017) from 11am due to forecast adverse weather.";
       this.emergencyService.setEmergency(emergency);
     }
-
+    this.emergency = this.emergencyService.emergency;
   }
 
 }
